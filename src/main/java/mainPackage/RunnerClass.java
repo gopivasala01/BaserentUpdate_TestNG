@@ -240,6 +240,7 @@ public class RunnerClass {
 			setPortfolioName(null);
 			setBaseRentFromPW(null);
 			setFailedReason(null);
+			driver.quit();
 		}
 		
     }
@@ -290,37 +291,7 @@ public class RunnerClass {
         }
     } */
  
-    
-   @SuppressWarnings("deprecation")
-   @AfterMethod
-   public void tearDown() throws IOException, InterruptedException {
-	   ChromeDriver driver = driverThreadLocal.get();
-	   try {
-	       if (driver != null) {
-	           // Close the browser window
-	           driver.close();
-	           
-	           // Check if the WebDriver process is still running
-	           if (isProcessRunning(driver)) {
-	               // If the process is still running, forcibly kill it
-	               driver.close();
-	               killChromeDriverProcess();
-	           }
-	       }
-	   } catch (WebDriverException e) {
-	       System.out.println("WebDriverException occurred while quitting the driver: " + e.getMessage());
-	   } finally {
-	       // Ensure proper cleanup
-	       try {
-	           // Wait for a short period for the browser process to terminate
-	           Thread.sleep(2000);
-	       } catch (InterruptedException ignored) {
-	           Thread.currentThread().interrupt();
-	       }
-	       // Remove the driver from the thread local
-	       driverThreadLocal.remove();
-	   }
-   }
+
    
   /* @AfterTest
    public void tearDownReports() {
@@ -328,43 +299,7 @@ public class RunnerClass {
        extent.flush();
    }*/
 
-	private boolean isProcessRunning(WebDriver driver) {
-	    try {
-	        // Check if the WebDriver process is still running
-	        driver.getTitle(); // Accessing a method to check if the WebDriver is still alive
-	        return true;
-	    } catch (Exception e) {
-	        // WebDriver process has terminated
-	        return false;
-	    }
-	}
 	
-	public void killChromeDriverProcess() {
-	    String os = System.getProperty("os.name").toLowerCase();
-	    String processName = "";
-
-	    // Determine the process name based on the operating system
-	    if (os.contains("win")) {
-	        processName = "chromedriver.exe";
-	    } else if (os.contains("mac")) {
-	        processName = "chromedriver";
-	    } else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) {
-	        processName = "chromedriver";
-	    } else {
-	        System.out.println("Unsupported operating system: " + os);
-	        return;
-	    }
-
-	    try {
-	        // Execute platform-specific command to kill the process
-	        Runtime.getRuntime().exec("pkill -f " + processName); // For Unix-like systems
-	        // Runtime.getRuntime().exec("taskkill /F /IM " + processName); // For Windows
-	    } catch (IOException e) {
-	        System.out.println("Error killing ChromeDriver process: " + e.getMessage());
-	    }
-	}
-   
-
     @DataProvider(name = "testData", parallel = true)
     public Object[][] testData() {
     	try {
