@@ -29,7 +29,7 @@ public class AppConfig
 	   
 	  // public static String leaseFetchQuery  = "Select Company, Building,leaseName from Automation.InitialRentsUpdate where Status ='Pending' and Company ='Georgia'";
 	   
-	   public static String pendingLeasesQuery = "Select ID, Company, LeaseEntityID,DateDiff(Day,MoveInDate,Getdate()) as datedifference,moveInDate from Automation.BaseRentUpdate where Status in ('Active','Active - Notice Given','Active - TTO','Active - Month to Month') and Company !='Chicago PFW'";//and Automation_Notes in ('Base Rent could not be saved','Lease not found','Wrong Lease Entity ID')  ";//and LeaseEntityID = '3569451017'";//Company ='Alabama' and convert(date, Automation_Completiondate )<> '2023-07-05'";
+	   public static String pendingLeasesQuery = "Select ID, Company, LeaseEntityID,DateDiff(Day,MoveInDate,Getdate()) as datedifference,moveInDate from Automation.BaseRentUpdate where Status in ('Active','Active - Notice Given','Active - TTO','Active - Month to Month') and Company !='Chicago PFW' and Automation_Status is null";//and Automation_Notes in ('Base Rent could not be saved','Lease not found','Wrong Lease Entity ID')  ";//and LeaseEntityID = '3569451017'";//Company ='Alabama' and convert(date, Automation_Completiondate )<> '2023-07-05'";
 
 	   
 	   public static String failedLeasesQuery = "Select Company, LeaseEntityID,DateDiff(Day,MoveInDate,Getdate()) as datedifference,moveInDate from Automation.BaseRentUpdate where  Company='Alabama' and Status ='Failed'";
