@@ -1,10 +1,13 @@
 package mainPackage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.SocketException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -16,6 +19,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -49,6 +53,21 @@ public class RunnerClass {
     private static ThreadLocal<String> portfolioNameThreadLocal = new ThreadLocal<>();
     private static ThreadLocal<String> baseRentFromPWThreadLocal = new ThreadLocal<>();
     private static ThreadLocal<String> failedReasonThreadLocal = new ThreadLocal<>();
+    
+
+@BeforeSuite
+    public static void DBChanges() {
+       
+       //----------------------Null the column FilterValueInPW for current run----------------------------------
+       String updateFilterValueInPW = "EXEC SP_Automation_BaseRent_InsertSourceDataIntoTable";
+       try {
+		DataBase.updateTable(updateFilterValueInPW);
+	} catch (SocketException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    }
+    
     
     
   /*  @BeforeClass
@@ -84,7 +103,7 @@ public class RunnerClass {
     		    prefs.put("download.default_directory",RunnerClass.downloadFilePath);
     	        ChromeOptions options = new ChromeOptions();
     	        options.addArguments("--remote-allow-origins=*");
-    	        options.addArguments("--headless");
+    	        //options.addArguments("--headless");
     	        options.addArguments("--disable-gpu");  //GPU hardware acceleration isn't needed for headless
     	        options.addArguments("--no-sandbox");  //Disable the sandbox for all software features
     	        options.addArguments("--disable-dev-shm-usage");  //Overcome limited resource problems

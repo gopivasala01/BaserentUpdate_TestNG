@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" data-provider-thread-count="4" name="Failed suite [DataProviderSuite]" guice-stage="DEVELOPMENT">
+<suite parallel="tests" data-provider-thread-count="5" name="Failed suite [DataProviderSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" parallel="tests" name="DataProviderTest(failed)">
     <classes>
       <class name="mainPackage.RunnerClass">
         <methods>
           <include name="setUp"/>
-          <include name="testMethod" invocation-numbers="0 1"/>
-          <include name="tearDown"/>
+          <include name="testMethod" invocation-numbers="81 309 363 397"/>
         </methods>
       </class> <!-- mainPackage.RunnerClass -->
     </classes>

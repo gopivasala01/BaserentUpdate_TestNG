@@ -1,117 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-17T11:45:58 IST" name="DataProviderSuite" finished-at="2024-05-17T11:46:58 IST" duration-ms="60508">
+  <suite started-at="2024-06-20T12:26:46 IST" name="DataProviderSuite" finished-at="2024-06-20T12:26:48 IST" duration-ms="2000">
     <groups>
     </groups>
-    <test started-at="2024-05-17T11:45:58 IST" name="DataProviderTest" finished-at="2024-05-17T11:46:58 IST" duration-ms="60508">
+    <test started-at="2024-06-20T12:26:46 IST" name="DataProviderTest" finished-at="2024-06-20T12:26:48 IST" duration-ms="2000">
       <class name="mainPackage.RunnerClass">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:mainPackage.RunnerClass@5b7a5baa]" started-at="2024-05-17T11:46:01 IST" name="setUp" finished-at="2024-05-17T11:46:21 IST" duration-ms="19334" status="PASS">
+        <test-method is-config="true" signature="DBChanges()[pri:0, instance:mainPackage.RunnerClass@477b4cdf]" started-at="2024-06-20T12:26:43 IST" name="DBChanges" finished-at="2024-06-20T12:26:46 IST" duration-ms="3504" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:mainPackage.RunnerClass@5b7a5baa]" started-at="2024-05-17T11:46:01 IST" name="setUp" finished-at="2024-05-17T11:46:20 IST" duration-ms="18985" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:mainPackage.RunnerClass@5b7a5baa]" started-at="2024-05-17T11:46:01 IST" name="setUp" finished-at="2024-05-17T11:46:21 IST" duration-ms="19532" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testMethod(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:mainPackage.RunnerClass@5b7a5baa]" started-at="2024-05-17T11:46:20 IST" name="testMethod" data-provider="testData" finished-at="2024-05-17T11:46:57 IST" duration-ms="37143" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[463827]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Boise]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[4359880721]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[498]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2023-01-05 00:00:00.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMethod -->
-        <test-method signature="testMethod(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:mainPackage.RunnerClass@5b7a5baa]" started-at="2024-05-17T11:46:21 IST" name="testMethod" data-provider="testData" finished-at="2024-05-17T11:46:56 IST" duration-ms="35701" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[463828]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[New Mexico]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[4697063449]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[322]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2023-06-30 00:00:00.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMethod -->
-        <test-method signature="testMethod(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:mainPackage.RunnerClass@5b7a5baa]" started-at="2024-05-17T11:46:21 IST" name="testMethod" data-provider="testData" finished-at="2024-05-17T11:46:58 IST" duration-ms="37490" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[463829]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Dallas/Fort Worth]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[4831379492]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[573]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2022-10-22 00:00:00.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMethod -->
+        </test-method> <!-- DBChanges -->
       </class> <!-- mainPackage.RunnerClass -->
     </test> <!-- DataProviderTest -->
   </suite> <!-- DataProviderSuite -->
